@@ -14,10 +14,6 @@ int mudar_X(int *v, int num, int tam);
 
 int mudar_O(int *v, int num, int tam);
 
-int verif3(int *v);
-
-int verif5(int *v);
-
-int verif7(int *v);
+int verif(int *v, int num);
 
 #endif

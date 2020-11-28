@@ -50,12 +50,12 @@ void intro(char* nome, int score){
     }
     fclose(arquivo);
 
-    for(k = 0; k < i; k++){
+    for(k = 0; k < i + 1; k++){
         if(strcmp(nome,lista[k].nome) == 0){
             lista[k].pontos = lista[k].pontos + score;
             break;
         }
-        if(k == i - 1){
+        if(k == i){
             lista[i].pontos = score;
             strcpy(lista[i].nome,nome);
             i++;
@@ -91,7 +91,7 @@ void intro(char* nome, int score){
 
     }
     fclose(arquivo);
-    printf("\n->Confirmação que ocorreu todo certo\n");
+    printf("\n->Confirmação que tudo ocorreu certo");
     free(lista);
 }
 
@@ -163,7 +163,7 @@ void tipo_jogo(int tipo){
 
     limp(0);
 
-    printf("Deseja jogar:\n1 - velha 3x3\n2 - velha 5x5\n3 - velha 7x7\n\n->Escolha: ");
+    printf("\nDeseja jogar:\n1 - velha 3x3\n2 - velha 5x5\n3 - velha 7x7\n\n->Escolha: ");
     scanf("%d", &esc);
 
     if(tipo == 1){
@@ -198,6 +198,8 @@ void saida(){
     printf("\n\nOque deseja?\n1 - sair\n2 - retornar ao menu!\n\n->Escolha: ");
     scanf("%d", &esc);
     if(esc == 1){
+        limp(0);
+        printf("Obrigado por jogar!!");
         exit(1);
     }else if (esc == 2){
         printf("\n");
@@ -226,7 +228,8 @@ void tuto(){
             }
             k = k - 3;
         }
-        printf("\n\nDentro do jogo sera nescessario informar um numero\nutilize um dos numeros mostrados para definir a posição de cada jogada...");
+        printf("\n\nDentro do jogo sera nescessario informar um numero\nutilize um dos numeros mostrados para definir a posição de cada jogada...\n");
+        printf("A Pontuação por vitoria é 1\n");
         printf("\nClique em Enter para Retornar ao menu!!");
         getchar();
         printf("Retornando...");
@@ -242,7 +245,8 @@ void tuto(){
             }
             k = k - 5;
         }
-        printf("\n\nDentro do jogo sera nescessario informar um numero\nutilize um dos numeros mostrados para definir a posição de cada jogada...");
+        printf("\n\nDentro do jogo sera nescessario informar um numero\nutilize um dos numeros mostrados para definir a posição de cada jogada...\n");
+        printf("A Pontuação por vitoria é 2\n");
         printf("\nClique em Enter para Retornar ao menu!!");
         getchar();
         printf("Retornando...");
@@ -258,13 +262,15 @@ void tuto(){
             }
             k = k - 7;
         }
-        printf("\n\nDentro do jogo sera nescessario informar um numero\nutilize um dos numeros mostrados para definir a posição de cada jogada...");
+        printf("\n\nDentro do jogo sera nescessario informar um numero\nutilize um dos numeros mostrados para definir a posição de cada jogada...\n");
+        printf("A Pontuação por vitoria é 3\n");
         printf("\nClique em Enter para Retornar ao menu!!");
         getchar();
         printf("Retornando...");
         sleep(1);
     } else if (esc == 4) {
-        printf("\nAs Posições irão aparecer apos a primeira jogada\nAntes disso não havera nada, A pontuação é dada\nPor cada vitoria de cada usuario...\nRecebendo pontos em qualquer modo de jogo\nRelacionando seu nome a uma pontuação.\n");
+        printf("\nAs Posições irão aparecer apos a primeira jogada Antes\n Disso não havera nada, A pontuação é dada Por cada\nVitoria de cada usuario... Recebendo pontos em qualquer\nModo de jogo Relacionando seu nome a uma pontuação.\n\n");
+        printf("O menu de Pontos:\n3x3 = 1 Ponto\n5x5 = 2 Pontos\n7x7 = 3 Pontos\n");
         printf("\nClique em Enter para Retornar ao menu!!");
         getchar();
         printf("Retornando...");
@@ -324,14 +330,13 @@ void velha_p(int tam){
             }
             limp(0);
             if (tam == 3){
-                vitoria = verif3(campo);
+                vitoria = verif(campo,tam);
 
             } else if (tam == 5){
-                vitoria = verif5(campo);
+                vitoria = verif(campo,tam);
 
             } else if (tam == 7){
-                vitoria = verif7(campo);
-
+                vitoria = verif(campo,tam);
             }
             if(vitoria == 10){
                 printf("\nPARABENS , O GANHADOR É O JOGADOR NUMERO 1, X!!");
@@ -440,14 +445,13 @@ void velha_c(int tam){
             }
             limp(0);
             if (tam == 3){
-                vitoria = verif3(campo);
+                vitoria = verif(campo,tam);
 
             } else if (tam == 5){
-                vitoria = verif5(campo);
+                vitoria = verif(campo,tam);
 
             } else if (tam == 7){
-                vitoria = verif7(campo);
-
+                vitoria = verif(campo,tam);
             }
 
             if(vitoria == 10){

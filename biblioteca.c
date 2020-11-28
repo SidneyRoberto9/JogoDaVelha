@@ -149,266 +149,262 @@ int mudar_O(int *v, int num, int tam){
     }
 }
 
-int verif3(int *v){
-    int i , tam = 3;
+int verif(int *v, int num){
+    int i , tam = 0;
 
-    for(i = 0;i < tam; i++){
-        if( *(v + (i * tam) + 0) == 1 && *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1){
-            return 10;
+    if (num == 3){
+        tam = num;
+        for(i = 0;i < tam; i++){
+            if( *(v + (i * tam) + 0) == 1 && *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1){
+                return 10;
 
-        } else if ( *(v + (i * tam) + 0) == 0 && *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0){
-            return 20;
+            } else if ( *(v + (i * tam) + 0) == 0 && *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0){
+                return 20;
 
-        } else if( *(v + (0 * tam) + i) == 1 && *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1){
-            return 10;
+            } else if( *(v + (0 * tam) + i) == 1 && *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1){
+                return 10;
 
-        } else if ( *(v + (0 * tam) + i) == 0 && *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0){
-            return 20;
+            } else if ( *(v + (0 * tam) + i) == 0 && *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0){
+                return 20;
 
-        } else if( *(v + (0 * tam) + 0) == 1 && *(v + (1 * tam) + 1 ) == 1 && *(v + (2 * tam) + 2) == 1){
-            return 10;
+            } else if( *(v + (0 * tam) + 0) == 1 && *(v + (1 * tam) + 1 ) == 1 && *(v + (2 * tam) + 2) == 1){
+                return 10;
 
-        } else if ( *(v + (0 * tam) + 0) == 0 && *(v + (1  * tam) + 1 ) == 0 && *(v + (2 * tam) + 2) == 0){
-            return 20;
+            } else if ( *(v + (0 * tam) + 0) == 0 && *(v + (1  * tam) + 1 ) == 0 && *(v + (2 * tam) + 2) == 0){
+                return 20;
 
-        }  else if( *(v + (0 * tam) + 2) == 1 && *(v + (1 * tam) + 1 ) == 1 && *(v + (2 * tam) + 0) == 1){
-            return 10;
+            }  else if( *(v + (0 * tam) + 2) == 1 && *(v + (1 * tam) + 1 ) == 1 && *(v + (2 * tam) + 0) == 1){
+                return 10;
 
-        } else if ( *(v + (0 * tam) + 2) == 0 && *(v + (1 * tam) + 0 ) == 1 && *(v + (2 * tam) + 0) == 0){
-            return 20;
+            } else if ( *(v + (0 * tam) + 2) == 0 && *(v + (1 * tam) + 0 ) == 1 && *(v + (2 * tam) + 0) == 0){
+                return 20;
+            }
+        }
+    } else if (num == 5){
+        tam = num;
+        for(i = 0; i < tam; i++){
+            if( *(v + (i * tam) + 0) == 1 && *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1  && *(v + (i * tam) + 3) == 1){
+                return 10;
 
+            } else if (*(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1  && *(v + (i * tam) + 4) == 1){
+                return 10;
+
+            } else if( *(v + (i * tam) + 0) == 0 && *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0  && *(v + (i * tam) + 3) == 0){
+                return 20;
+
+            } else if (*(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0  && *(v + (i * tam) + 4) == 0){
+                return 20;
+
+            } else if( *(v + (0 * tam) + i) == 1 && *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1  && *(v + (3 * tam) + i) == 1){
+                return 10;
+
+            } else if (*(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1  && *(v + (4 * tam) + i) == 1){
+                return 10;
+
+            } else if( *(v + (0 * tam) + i) == 0 && *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0  && *(v + (3 * tam) + i) == 0){
+                return 20;
+
+            } else if (*(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0  && *(v + (4 * tam) + i) == 0){
+                return 20;
+
+            } else if (*(v + (0 * tam) + 0) == 1 && *(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1  && *(v + (3 * tam) + 3) == 1){
+                return 10;
+
+            } else if (*(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1  && *(v + (4 * tam) + 4) == 1){
+                return 10;
+
+            } else if (*(v + (0 * tam) + 0) == 0 && *(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0  && *(v + (3 * tam) + 3) == 0){
+                return 20;
+
+            } else if (*(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0  && *(v + (4 * tam) + 4) == 0){
+                return 20;
+
+            } else if (*(v + (0 * tam) + 1) == 1 && *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 3) == 1  && *(v + (3 * tam) + 4) == 1){
+                return 10;
+
+            } else if (*(v + (1 * tam) + 0) == 1 && *(v + (2 * tam) + 1) == 1 && *(v + (3 * tam) + 2) == 1  && *(v + (4 * tam) + 3) == 1){
+                return 10;
+
+            } else if (*(v + (0 * tam) + 1) == 0 && *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 3) == 0  && *(v + (3 * tam) + 4) == 0){
+                return 20;
+
+            } else if (*(v + (1 * tam) + 0) == 0 && *(v + (2 * tam) + 1) == 0 && *(v + (3 * tam) + 2) == 0  && *(v + (4 * tam) + 3) == 0){
+                return 20;
+
+            } else if (*(v + (0 * tam) + 4) == 1 && *(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 2) == 1  && *(v + (3 * tam) + 1) == 1){
+                return 10;
+
+            } else if (*(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 1) == 1  && *(v + (4 * tam) + 0) == 1){
+                return 10;
+
+            } else if (*(v + (0 * tam) + 4) == 0 && *(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 2) == 0  && *(v + (3 * tam) + 1) == 0){
+                return 20;
+
+            } else if (*(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 1) == 0  && *(v + (4 * tam) + 0) == 0){
+                return 20;
+
+            } else if (*(v + (0 * tam) + 3) == 1 && *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 1) == 1  && *(v + (3 * tam) + 0) == 1){
+                return 10;
+
+            } else if (*(v + (1 * tam) + 4) == 1 && *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 2) == 1  && *(v + (4 * tam) + 1) == 1){
+                return 10;
+
+            }  else if (*(v + (0 * tam) + 3) == 0 && *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 1) == 0  && *(v + (3 * tam) + 0) == 0){
+                return 20;
+
+            } else if (*(v + (1 * tam) + 4) == 0 && *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 2) == 0  && *(v + (4 * tam) + 1) == 0){
+                return 20;
+            }
+        }
+    } else if (num == 7){
+        tam = num;
+        for(i = 0; i < tam; i++){
+            if( *(v + (i * tam) + 0) == 1 && *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1){
+                return 10;
+
+            } else if( *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1 && *(v + (i * tam) + 4) == 1){
+                return 10;
+
+            } else if( *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1 && *(v + (i * tam) + 4) == 1 && *(v + (i * tam) + 5) == 1){
+                return 10;
+
+            } else if( *(v + (i * tam) + 3) == 1 && *(v + (i * tam) + 4) == 1 && *(v + (i * tam) + 5) == 1 && *(v + (i * tam) + 6) == 1){
+                return 10;
+
+            } else if( *(v + (i * tam) + 0) == 0 && *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0){
+                return 20;
+
+            } else if( *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0 && *(v + (i * tam) + 4) == 0){
+                return 20;
+
+            } else if( *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0 && *(v + (i * tam) + 4) == 0 && *(v + (i * tam) + 5) == 0){
+                return 20;
+
+            } else if( *(v + (i * tam) + 3) == 0 && *(v + (i * tam) + 4) == 0 && *(v + (i * tam) + 5) == 0 && *(v + (i * tam) + 6) == 0){
+                return 20;
+
+            } else if( *(v + (0 * tam) + i) == 1 && *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1){
+                return 10;
+
+            } else if( *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1 && *(v + (4 * tam) + i) == 1){
+                return 10;
+
+            } else if( *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1 && *(v + (4 * tam) + i) == 1 && *(v + (5 * tam) + i) == 1){
+                return 10;
+
+            } else if( *(v + (3 * tam) + i) == 1 && *(v + (4 * tam) + i) == 1 && *(v + (5 * tam) + i) == 1 && *(v + (6 * tam) + i) == 1){
+                return 10;
+
+            } else if( *(v + (0 * tam) + i) == 0 && *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0){
+                return 20;
+
+            } else if( *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0 && *(v + (4 * tam) + i) == 0){
+                return 20;
+
+            } else if( *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0 && *(v + (4 * tam) + i) == 0 && *(v + (5 * tam) + i) == 0){
+                return 20;
+
+            } else if( *(v + (3 * tam) + i) == 0 && *(v + (4 * tam) + i) == 0 && *(v + (5 * tam) + i) == 0 && *(v + (6 * tam) + i) == 0){
+                return 20;
+
+            } else if( *(v + (0 * tam) + 0) == 1 && *(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1){
+                return 10;
+
+            } else if( *(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1 && *(v + (4 * tam) + 4) == 1){
+                return 10;
+
+            } else if( *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1 && *(v + (4 * tam) + 4) == 1 && *(v + (5 * tam) + 5) == 1){
+                return 10;
+
+            } else if( *(v + (3 * tam) + 3) == 1 && *(v + (4 * tam) + i) == 1 && *(v + (5 * tam) + 5) == 1 && *(v + (6 * tam) + 6) == 1){
+                return 10;
+
+            } else if( *(v + (0 * tam) + 0) == 0 && *(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0){
+                return 20;
+
+            } else if( *(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0 && *(v + (4 * tam) + 4) == 0){
+                return 20;
+
+            } else if( *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0 && *(v + (4 * tam) + 4) == 0 && *(v + (5 * tam) + 5) == 0){
+                return 20;
+
+            } else if( *(v + (3 * tam) + 3) == 0 && *(v + (4 * tam) + i) == 0 && *(v + (5 * tam) + 5) == 0 && *(v + (6 * tam) + 6) == 0){
+                return 20;
+
+            } else if( *(v + (0 * tam) + 1) == 1 && *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 4) == 1){
+                return 10;
+
+            } else if( *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 4) == 1 && *(v + (4 * tam) + 5) == 1){
+                return 10;
+
+            } else if( *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 4) == 1 && *(v + (4 * tam) + 5) == 1 && *(v + (5 * tam) + 6) == 1){
+                return 10;
+
+            } else if( *(v + (0 * tam) + 2) == 1 && *(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 4) == 1 && *(v + (3 * tam) + 5) == 1){
+                return 10;
+
+            } else if( *(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 4) == 1 && *(v + (3 * tam) + 5) == 1 && *(v + (4 * tam) + 6) == 1){
+                return 10;
+
+            } else if( *(v + (0 * tam) + 3) == 1 && *(v + (1 * tam) + 4) == 1 && *(v + (2 * tam) + 5) == 1 && *(v + (3 * tam) + 6) == 1){
+                return 10;
+
+            } else if( *(v + (0 * tam) + 1) == 0 && *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 4) == 0){
+                return 20;
+
+            } else if( *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 4) == 0 && *(v + (4 * tam) + 5) == 0){
+                return 20;
+
+            } else if( *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 4) == 0 && *(v + (4 * tam) + 5) == 0 && *(v + (5 * tam) + 6) == 0){
+                return 20;
+
+            } else if( *(v + (0 * tam) + 2) == 0 && *(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 4) == 0 && *(v + (3 * tam) + 5) == 0){
+                return 20;
+
+            } else if( *(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 4) == 0 && *(v + (3 * tam) + 5) == 0 && *(v + (4 * tam) + 6) == 0){
+                return 20;
+
+            } else if( *(v + (0 * tam) + 3) == 0 && *(v + (1 * tam) + 4) == 0 && *(v + (2 * tam) + 5) == 0 && *(v + (3 * tam) + 6) == 0){
+                return 20;
+
+            } else if( *(v + (1 * tam) + 0) == 1 && *(v + (2 * tam) + 1) == 1 && *(v + (3 * tam) + 2) == 1 && *(v + (4 * tam) + 3) == 1){
+                return 10;
+
+            } else if( *(v + (2 * tam) + 1) == 1 && *(v + (3 * tam) + 2) == 1 && *(v + (4 * tam) + 3) == 1 && *(v + (5 * tam) + 4) == 1){
+                return 10;
+
+            } else if( *(v + (3 * tam) + 2) == 1 && *(v + (4 * tam) + 3) == 1 && *(v + (5 * tam) + 4) == 1 && *(v + (6 * tam) + 5) == 1){
+                return 10;
+
+            } else if( *(v + (2 * tam) + 0) == 1 && *(v + (3 * tam) + 1) == 1 && *(v + (4 * tam) + 2) == 1 && *(v + (5 * tam) + 3) == 1){
+                return 10;
+
+            } else if( *(v + (3 * tam) + 1) == 1 && *(v + (4 * tam) + 2) == 1 && *(v + (5 * tam) + 3) == 1 && *(v + (6 * tam) + 4) == 1){
+                return 10;
+
+            } else if( *(v + (3 * tam) + 0) == 1 && *(v + (4 * tam) + 1) == 1 && *(v + (5 * tam) + 2) == 1 && *(v + (6 * tam) + 3) == 1){
+                return 10;
+
+            } else if( *(v + (1 * tam) + 0) == 0 && *(v + (2 * tam) + 1) == 0 && *(v + (3 * tam) + 2) == 0 && *(v + (4 * tam) + 3) == 0){
+                return 20;
+
+            } else if( *(v + (2 * tam) + 1) == 0 && *(v + (3 * tam) + 2) == 0 && *(v + (4 * tam) + 3) == 0 && *(v + (5 * tam) + 4) == 0){
+                return 20;
+
+            } else if( *(v + (3 * tam) + 2) == 0 && *(v + (4 * tam) + 3) == 0 && *(v + (5 * tam) + 4) == 0 && *(v + (6 * tam) + 5) == 0){
+                return 20;
+
+            } else if( *(v + (2 * tam) + 0) == 0 && *(v + (3 * tam) + 1) == 0 && *(v + (4 * tam) + 2) == 0 && *(v + (5 * tam) + 3) == 0){
+                return 20;
+
+            } else if( *(v + (3 * tam) + 1) == 0 && *(v + (4 * tam) + 2) == 0 && *(v + (5 * tam) + 3) == 0 && *(v + (6 * tam) + 4) == 0){
+                return 20;
+
+            } else if( *(v + (3 * tam) + 0) == 0 && *(v + (4 * tam) + 1) == 0 && *(v + (5 * tam) + 2) == 0 && *(v + (6 * tam) + 3) == 0){
+                return 20;
+
+            }
         }
     }
     return 0;
-}
-
-int verif5(int *v){
-    int i, tam = 5;
-
-    for(i = 0; i < tam; i++){
-        if( *(v + (i * tam) + 0) == 1 && *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1  && *(v + (i * tam) + 3) == 1){
-            return 10;
-
-        } else if (*(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1  && *(v + (i * tam) + 4) == 1){
-            return 10;
-
-        } else if( *(v + (i * tam) + 0) == 0 && *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0  && *(v + (i * tam) + 3) == 0){
-            return 20;
-
-        } else if (*(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0  && *(v + (i * tam) + 4) == 0){
-            return 20;
-
-        } else if( *(v + (0 * tam) + i) == 1 && *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1  && *(v + (3 * tam) + i) == 1){
-            return 10;
-
-        } else if (*(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1  && *(v + (4 * tam) + i) == 1){
-            return 10;
-
-        } else if( *(v + (0 * tam) + i) == 0 && *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0  && *(v + (3 * tam) + i) == 0){
-            return 20;
-
-        } else if (*(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0  && *(v + (4 * tam) + i) == 0){
-            return 20;
-
-        } else if (*(v + (0 * tam) + 0) == 1 && *(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1  && *(v + (3 * tam) + 3) == 1){
-            return 10;
-
-        } else if (*(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1  && *(v + (4 * tam) + 4) == 1){
-            return 10;
-
-        } else if (*(v + (0 * tam) + 0) == 0 && *(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0  && *(v + (3 * tam) + 3) == 0){
-            return 20;
-
-        } else if (*(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0  && *(v + (4 * tam) + 4) == 0){
-            return 20;
-
-        } else if (*(v + (0 * tam) + 1) == 1 && *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 3) == 1  && *(v + (3 * tam) + 4) == 1){
-            return 10;
-
-        } else if (*(v + (1 * tam) + 0) == 1 && *(v + (2 * tam) + 1) == 1 && *(v + (3 * tam) + 2) == 1  && *(v + (4 * tam) + 3) == 1){
-            return 10;
-
-        } else if (*(v + (0 * tam) + 1) == 0 && *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 3) == 0  && *(v + (3 * tam) + 4) == 0){
-            return 20;
-
-        } else if (*(v + (1 * tam) + 0) == 0 && *(v + (2 * tam) + 1) == 0 && *(v + (3 * tam) + 2) == 0  && *(v + (4 * tam) + 3) == 0){
-            return 20;
-
-        } else if (*(v + (0 * tam) + 4) == 1 && *(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 2) == 1  && *(v + (3 * tam) + 1) == 1){
-            return 10;
-
-        } else if (*(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 1) == 1  && *(v + (4 * tam) + 0) == 1){
-            return 10;
-
-        } else if (*(v + (0 * tam) + 4) == 0 && *(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 2) == 0  && *(v + (3 * tam) + 1) == 0){
-            return 20;
-
-        } else if (*(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 1) == 0  && *(v + (4 * tam) + 0) == 0){
-            return 20;
-
-        } else if (*(v + (0 * tam) + 3) == 1 && *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 1) == 1  && *(v + (3 * tam) + 0) == 1){
-            return 10;
-
-        } else if (*(v + (1 * tam) + 4) == 1 && *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 2) == 1  && *(v + (4 * tam) + 1) == 1){
-            return 10;
-
-        }  else if (*(v + (0 * tam) + 3) == 0 && *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 1) == 0  && *(v + (3 * tam) + 0) == 0){
-            return 20;
-
-        } else if (*(v + (1 * tam) + 4) == 0 && *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 2) == 0  && *(v + (4 * tam) + 1) == 0){
-            return 20;
-        }
-    }
-}
-
-int verif7(int *v){
-    int i, tam = 7;
-
-    for(i = 0; i < tam; i++){
-        if( *(v + (i * tam) + 0) == 1 && *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1){
-            return 10;
-
-        } else if( *(v + (i * tam) + 1) == 1 && *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1 && *(v + (i * tam) + 4) == 1){
-            return 10;
-
-        } else if( *(v + (i * tam) + 2) == 1 && *(v + (i * tam) + 3) == 1 && *(v + (i * tam) + 4) == 1 && *(v + (i * tam) + 5) == 1){
-            return 10;
-
-        } else if( *(v + (i * tam) + 3) == 1 && *(v + (i * tam) + 4) == 1 && *(v + (i * tam) + 5) == 1 && *(v + (i * tam) + 6) == 1){
-            return 10;
-
-        } else if( *(v + (i * tam) + 0) == 0 && *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0){
-            return 20;
-
-        } else if( *(v + (i * tam) + 1) == 0 && *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0 && *(v + (i * tam) + 4) == 0){
-            return 20;
-
-        } else if( *(v + (i * tam) + 2) == 0 && *(v + (i * tam) + 3) == 0 && *(v + (i * tam) + 4) == 0 && *(v + (i * tam) + 5) == 0){
-            return 20;
-
-        } else if( *(v + (i * tam) + 3) == 0 && *(v + (i * tam) + 4) == 0 && *(v + (i * tam) + 5) == 0 && *(v + (i * tam) + 6) == 0){
-            return 20;
-
-        } else if( *(v + (0 * tam) + i) == 1 && *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1){
-            return 10;
-
-        } else if( *(v + (1 * tam) + i) == 1 && *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1 && *(v + (4 * tam) + i) == 1){
-            return 10;
-
-        } else if( *(v + (2 * tam) + i) == 1 && *(v + (3 * tam) + i) == 1 && *(v + (4 * tam) + i) == 1 && *(v + (5 * tam) + i) == 1){
-            return 10;
-
-        } else if( *(v + (3 * tam) + i) == 1 && *(v + (4 * tam) + i) == 1 && *(v + (5 * tam) + i) == 1 && *(v + (6 * tam) + i) == 1){
-            return 10;
-
-        } else if( *(v + (0 * tam) + i) == 0 && *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0){
-            return 20;
-
-        } else if( *(v + (1 * tam) + i) == 0 && *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0 && *(v + (4 * tam) + i) == 0){
-            return 20;
-
-        } else if( *(v + (2 * tam) + i) == 0 && *(v + (3 * tam) + i) == 0 && *(v + (4 * tam) + i) == 0 && *(v + (5 * tam) + i) == 0){
-            return 20;
-
-        } else if( *(v + (3 * tam) + i) == 0 && *(v + (4 * tam) + i) == 0 && *(v + (5 * tam) + i) == 0 && *(v + (6 * tam) + i) == 0){
-            return 20;
-
-        } else if( *(v + (0 * tam) + 0) == 1 && *(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1){
-            return 10;
-
-        } else if( *(v + (1 * tam) + 1) == 1 && *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1 && *(v + (4 * tam) + 4) == 1){
-            return 10;
-
-        } else if( *(v + (2 * tam) + 2) == 1 && *(v + (3 * tam) + 3) == 1 && *(v + (4 * tam) + 4) == 1 && *(v + (5 * tam) + 5) == 1){
-            return 10;
-
-        } else if( *(v + (3 * tam) + 3) == 1 && *(v + (4 * tam) + i) == 1 && *(v + (5 * tam) + 5) == 1 && *(v + (6 * tam) + 6) == 1){
-            return 10;
-
-        } else if( *(v + (0 * tam) + 0) == 0 && *(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0){
-            return 20;
-
-        } else if( *(v + (1 * tam) + 1) == 0 && *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0 && *(v + (4 * tam) + 4) == 0){
-            return 20;
-
-        } else if( *(v + (2 * tam) + 2) == 0 && *(v + (3 * tam) + 3) == 0 && *(v + (4 * tam) + 4) == 0 && *(v + (5 * tam) + 5) == 0){
-            return 20;
-
-        } else if( *(v + (3 * tam) + 3) == 0 && *(v + (4 * tam) + i) == 0 && *(v + (5 * tam) + 5) == 0 && *(v + (6 * tam) + 6) == 0){
-            return 20;
-
-        } else if( *(v + (0 * tam) + 1) == 1 && *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 4) == 1){
-            return 10;
-
-        } else if( *(v + (1 * tam) + 2) == 1 && *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 4) == 1 && *(v + (4 * tam) + 5) == 1){
-            return 10;
-
-        } else if( *(v + (2 * tam) + 3) == 1 && *(v + (3 * tam) + 4) == 1 && *(v + (4 * tam) + 5) == 1 && *(v + (5 * tam) + 6) == 1){
-            return 10;
-
-        } else if( *(v + (0 * tam) + 2) == 1 && *(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 4) == 1 && *(v + (3 * tam) + 5) == 1){
-            return 10;
-
-        } else if( *(v + (1 * tam) + 3) == 1 && *(v + (2 * tam) + 4) == 1 && *(v + (3 * tam) + 5) == 1 && *(v + (4 * tam) + 6) == 1){
-            return 10;
-
-        } else if( *(v + (0 * tam) + 3) == 1 && *(v + (1 * tam) + 4) == 1 && *(v + (2 * tam) + 5) == 1 && *(v + (3 * tam) + 6) == 1){
-            return 10;
-
-        } else if( *(v + (0 * tam) + 1) == 0 && *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 4) == 0){
-            return 20;
-
-        } else if( *(v + (1 * tam) + 2) == 0 && *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 4) == 0 && *(v + (4 * tam) + 5) == 0){
-            return 20;
-
-        } else if( *(v + (2 * tam) + 3) == 0 && *(v + (3 * tam) + 4) == 0 && *(v + (4 * tam) + 5) == 0 && *(v + (5 * tam) + 6) == 0){
-            return 20;
-
-        } else if( *(v + (0 * tam) + 2) == 0 && *(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 4) == 0 && *(v + (3 * tam) + 5) == 0){
-            return 20;
-
-        } else if( *(v + (1 * tam) + 3) == 0 && *(v + (2 * tam) + 4) == 0 && *(v + (3 * tam) + 5) == 0 && *(v + (4 * tam) + 6) == 0){
-            return 20;
-
-        } else if( *(v + (0 * tam) + 3) == 0 && *(v + (1 * tam) + 4) == 0 && *(v + (2 * tam) + 5) == 0 && *(v + (3 * tam) + 6) == 0){
-            return 20;
-
-        } else if( *(v + (1 * tam) + 0) == 1 && *(v + (2 * tam) + 1) == 1 && *(v + (3 * tam) + 2) == 1 && *(v + (4 * tam) + 3) == 1){
-            return 10;
-
-        } else if( *(v + (2 * tam) + 1) == 1 && *(v + (3 * tam) + 2) == 1 && *(v + (4 * tam) + 3) == 1 && *(v + (5 * tam) + 4) == 1){
-            return 10;
-
-        } else if( *(v + (3 * tam) + 2) == 1 && *(v + (4 * tam) + 3) == 1 && *(v + (5 * tam) + 4) == 1 && *(v + (6 * tam) + 5) == 1){
-            return 10;
-
-        } else if( *(v + (2 * tam) + 0) == 1 && *(v + (3 * tam) + 1) == 1 && *(v + (4 * tam) + 2) == 1 && *(v + (5 * tam) + 3) == 1){
-            return 10;
-
-        } else if( *(v + (3 * tam) + 1) == 1 && *(v + (4 * tam) + 2) == 1 && *(v + (5 * tam) + 3) == 1 && *(v + (6 * tam) + 4) == 1){
-            return 10;
-
-        } else if( *(v + (3 * tam) + 0) == 1 && *(v + (4 * tam) + 1) == 1 && *(v + (5 * tam) + 2) == 1 && *(v + (6 * tam) + 3) == 1){
-            return 10;
-
-        } else if( *(v + (1 * tam) + 0) == 0 && *(v + (2 * tam) + 1) == 0 && *(v + (3 * tam) + 2) == 0 && *(v + (4 * tam) + 3) == 0){
-            return 20;
-
-        } else if( *(v + (2 * tam) + 1) == 0 && *(v + (3 * tam) + 2) == 0 && *(v + (4 * tam) + 3) == 0 && *(v + (5 * tam) + 4) == 0){
-            return 20;
-
-        } else if( *(v + (3 * tam) + 2) == 0 && *(v + (4 * tam) + 3) == 0 && *(v + (5 * tam) + 4) == 0 && *(v + (6 * tam) + 5) == 0){
-            return 20;
-
-        } else if( *(v + (2 * tam) + 0) == 0 && *(v + (3 * tam) + 1) == 0 && *(v + (4 * tam) + 2) == 0 && *(v + (5 * tam) + 3) == 0){
-            return 20;
-
-        } else if( *(v + (3 * tam) + 1) == 0 && *(v + (4 * tam) + 2) == 0 && *(v + (5 * tam) + 3) == 0 && *(v + (6 * tam) + 4) == 0){
-            return 20;
-
-        } else if( *(v + (3 * tam) + 0) == 0 && *(v + (4 * tam) + 1) == 0 && *(v + (5 * tam) + 2) == 0 && *(v + (6 * tam) + 3) == 0){
-            return 20;
-
-        }
-    }
 }
