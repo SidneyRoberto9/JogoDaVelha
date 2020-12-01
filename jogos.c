@@ -482,17 +482,14 @@ void velha_c(int tam){
             }
             if( vitoria == 10){
                 if (tam == 3){
-                    entry(1);
                     saida();
                     break;
 
                 } else if (tam == 5){
-                    entry(2);
                     saida();
                     break;
 
                 } else if (tam == 7){
-                    entry(3);
                     saida();
                     break;
 
